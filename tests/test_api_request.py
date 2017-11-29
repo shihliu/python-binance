@@ -7,8 +7,8 @@ import pytest
 import requests_mock
 
 
-client = Client('api_key', 'api_secret')
-
+#client = Client('api_key', 'api_secret')
+client = Client('yq67cDjrCxGl6eeKMyTeiK1zkeArFpu8v4uB4b6TWDQdgjDlH0KjmXfHBZ1NjvJj', 'DxE7Wugo75EK8mLmybY76dbZW6tROpyNjBRd9NHsEOXqBaKq6Awgul4390xwRUdc')
 
 def test_invalid_json():
     """Test Invalid response Exception"""
@@ -17,7 +17,6 @@ def test_invalid_json():
         with requests_mock.mock() as m:
             m.get('https://www.binance.com/exchange/public/product', text='<head></html>')
             client.get_products()
-
 
 def test_api_exception():
     """Test API response Exception"""
